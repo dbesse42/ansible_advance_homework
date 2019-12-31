@@ -6,5 +6,15 @@
     register: r_serv_info
   - debug: var=r_serv_info
   
-#  - name: Delete instances
-   
+  - name: Delete instances 1
+    os_server:
+      cloud: ospcloud
+      name: frontend
+      state: absent
+
+  - name: Delete instances 2
+    os_server:
+      cloud: ospcloud
+      name: app1
+      state: absent
+
