@@ -5,7 +5,7 @@
       cloud: ospcloud
       server: app*
       filters:
-        vm_state: active
+        vm_statess: active
     register: r_serv_info
   - debug: var=r_serv_info
   
