@@ -18,3 +18,15 @@
       name: app1
       state: absent
 
+  - name: Delete instances 3
+    os_server:
+      cloud: ospcloud
+      name: app2
+      state: absent
+
+  - name: Delete instances 2
+    os_server:
+      cloud: ospcloud
+      name: db
+      state: absent
+
