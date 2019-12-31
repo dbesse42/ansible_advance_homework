@@ -1,5 +1,11 @@
 ---
 # tasks file for roles/osp-instance-delete
   - name: Fetch Instance Info
-  - name: Delete instances
+    os_server_info:
+      cloud: ospcloud
+      server: app*
+    register: r_serv_info
+  - debug: var=r_serv_info
+  
+#  - name: Delete instances
    
