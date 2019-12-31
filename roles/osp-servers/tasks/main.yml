@@ -1,6 +1,6 @@
 - debug: msg="in task"
 
-- name: Create new server instances and attaches them a network and passes metadata to the instance
+- name: Create new server instance, attach to network, pass metadata
   os_server:
       cloud: ospcloud
       name: "{{ item.value.name }}"
