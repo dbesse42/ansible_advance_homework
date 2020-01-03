@@ -23,6 +23,8 @@
   poll: 0
   register: r_instances
 
+- debug: var=r_instances
+
 - name: Wait for OSP instance creation to complete
   async_status: jid={{ item.ansible_job_id }}
   register: r_wait
