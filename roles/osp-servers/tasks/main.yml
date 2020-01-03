@@ -34,7 +34,7 @@
 
 - name: Debug instances 
   debug:
-    msg: "Server is {{ item.key }}"
+    msg: "Server is {{ item.item.key }}"
   loop: "{{ r_instances.results }}"
   
 - name: Add floating IP to instances
