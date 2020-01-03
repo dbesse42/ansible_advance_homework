@@ -23,7 +23,7 @@
   poll: 0
   register: r_instances
 
-- debug: var=r_instances
+# - debug: var=r_instances
 
 - name: Wait for OSP instance creation to complete
   async_status: jid={{ item.ansible_job_id }}
@@ -34,7 +34,7 @@
 
 - name: Debug instances 
   debug:
-    msg: "Server is {{ item.instance_name }}"
+    msg: "Server is {{ item.key }}"
   loop: "{{ r_instances.results }}"
   
 - name: Add floating IP to instances
