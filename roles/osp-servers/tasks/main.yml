@@ -42,7 +42,7 @@
     cloud: ospcloud
     state: present
     reuse: yes
-    server: "{{ item.item.instance_name }}"
+    server: "{{ item.item.key }}"
     network: ext_network
     wait: true
     timeout: 180
