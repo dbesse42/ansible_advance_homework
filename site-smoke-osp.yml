@@ -15,10 +15,10 @@
        - "{{ openstack_info.ansible_facts.openstack_servers }}"
     register: webpage
     
-  - debug: var=webpage  
+  - debug: var=webpage.stdout_lines
       
   - name: Fail if 'Ansible has done its job' is not in the page content
     fail:
-    when: "'Ansible Deployed' not in webpage.results[0].content"
+    when: "'Ansible Deployed' not in webpage.stdout_lines"
     tags:
       - osp.smoke
