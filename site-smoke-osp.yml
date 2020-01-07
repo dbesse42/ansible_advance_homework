@@ -15,7 +15,7 @@
        - "{{ openstack_info.ansible_facts.openstack_servers }}"
     register: webpage
     
-  - debug: var=webpage.results
+  - debug: var=webpage.results[0]
       
   - name: Fail if 'Ansible has done its job' is not in the page content
     fail:
