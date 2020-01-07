@@ -12,7 +12,10 @@
   - name: Get webpage content
     uri:
       url: "http://{{item.public_v4}}"
+    with_items:
+       - "{{ openstack_info.ansible_facts.openstack_servers }}"
     register: webpage2
+
   - name: check output from uri module
     debug: var=webpage2
     
