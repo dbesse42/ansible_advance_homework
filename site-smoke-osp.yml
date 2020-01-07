@@ -8,7 +8,14 @@
     register: openstack_info
     tags:
       - osp.smoke
-      
+  
+  - name: Get webpage content
+    uri:
+      url: "http://{{item.public_v4}}"
+    register: webpage2
+  - name: check output from uri module
+    debug: var=webpage2
+    
   - name: Curl website
     command: curl "http://{{item.public_v4}}"
     with_items:
