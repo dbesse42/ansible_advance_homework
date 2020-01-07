@@ -4,6 +4,8 @@
     os_server_info:
       cloud: ospcloud
     register: r_serv_info
+    ignore_errors: yes
+    
   - debug: var=r_serv_info
   
   - name: Delete instances 1
@@ -11,22 +13,26 @@
       cloud: ospcloud
       name: frontend
       state: absent
+    ignore_errors: yes
 
   - name: Delete instances 2
     os_server:
       cloud: ospcloud
       name: app1
       state: absent
+    ignore_errors: yes
 
   - name: Delete instances 3
     os_server:
       cloud: ospcloud
       name: app2
       state: absent
+    ignore_errors: yes
 
-  - name: Delete instances 2
+  - name: Delete instances 4
     os_server:
       cloud: ospcloud
       name: db
       state: absent
+    ignore_errors: yes
 
