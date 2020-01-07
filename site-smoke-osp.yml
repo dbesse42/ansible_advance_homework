@@ -18,7 +18,7 @@
     register: webpage2
 
   - name: check output from uri module
-    debug: var=webpage2
+    debug: var=webpage2.results[0].content
     
   - name: Curl website
     command: curl "http://{{item.public_v4}}"
